@@ -3,10 +3,12 @@ import axios from "axios";
 
 // const BASE_HOST = "192.168.199.141:8899";
 // const BASE_HOST = "123.206.117.14:8899";
-const BASE_HOST = "api.vcyberlift.com";
+// const BASE_HOST = "api.vcyberlift.com";
+const BASE_HOST = "127.0.0.1:8899";
 // const SOCKET_BASE_HOST = "192.168.199.141:8898";
 // const SOCKET_BASE_HOST = "123.206.117.14:8898";
-const SOCKET_BASE_HOST = "vcyberlift.com:8898";
+// const SOCKET_BASE_HOST = "vcyberlift.com:8898";
+const SOCKET_BASE_HOST = "127.0.0.1:8898";
 
 axios.defaults.baseURL = `http://${BASE_HOST}`;
 axios.defaults.headers.common = {

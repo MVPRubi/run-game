@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use((req, res, next) => {
-  res.setHeader('Content-Type', 'application/json');
+  res.setHeader("Content-Type", "application/json");
   next();
 });
 
@@ -48,7 +48,7 @@ const wss = new WebSocketServer({
 wss.on("connection", (ws, request) => {
   // 向客户端发送一条欢迎消息
   console.log("连接成功", ws.protocol);
- 
+
   // 注册一个事件处理程序，用于接收来自客户端的消息
   ws.on("message", (message: any) => {
     console.log("接受消息", message.toString());
