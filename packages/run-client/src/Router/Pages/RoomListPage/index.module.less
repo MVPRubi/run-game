@@ -1,0 +1,67 @@
+@import "../common.less";
+
+.root {
+  .page();
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 16px;
+  position: relative;
+
+  .title {
+    font-size: 36px;
+    color: #00160a;
+    margin-top: 16px;
+  }
+
+  .room-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    flex: 1;
+    margin-top: 24px;
+  }
+
+  .btn-group {
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    column-gap: 24px;
+    width: 100%;
+    padding: 20px;
+    background: #fff;
+    margin-left: -16px;
+    box-shadow: 0px -4px 8px 0px rgba(118, 118, 118, 0.25);
+
+    .room-input {
+      .input();
+    }
+
+    .enter-btn {
+      .btn();
+      background-color: #00160a;
+      color: white;
+      height: 40px;
+      width: 100px;
+      font-size: 16px;
+
+      border-color: #00160a;
+    }
+  }
+
+  .empty {
+    font-size: 16px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+    flex-direction: column;
+    row-gap: 16px;
+
+    img {
+      width: 200px;
+    }
+  }
+}

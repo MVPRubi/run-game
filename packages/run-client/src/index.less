@@ -1,0 +1,62 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, segoe ui, Roboto,
+    helvetica neue, Arial, noto sans, sans-serif, apple color emoji,
+    segoe ui emoji, segoe ui symbol, noto color emoji;
+}
+
+/* 重写组件样式 */
+.adm-center-popup-body {
+  border-radius: 16px;
+}
+
+.ant-modal {
+  position: absolute;
+  height: fit-content;
+  overflow: hidden;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+
+  transform-origin: center center !important;
+  max-width: calc(100vw - 60px);
+  will-change: transform;
+
+  .ant-modal-content {
+    border-radius: 16px;
+    overflow: auto;
+    max-height: 480px;
+  }
+}
+
+/* 媒体查询，实现在电脑端上 #root 最大宽度为 375px  */
+@media (min-width: 500px) {
+  #root {
+    position: absolute;
+    max-width: 414px;
+    max-height: 800px;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  }
+}

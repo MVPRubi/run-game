@@ -1,0 +1,37 @@
+.button {
+  border-radius: 28px;
+  border-width: 1px;
+  border-style: solid;
+  color: #fff;
+  background-color: #00160a;
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:active {
+    background-color: #343836;
+  }
+
+  &:hover {
+    background-color: #012c14;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &.text {
+    background-color: transparent;
+    color: #00160a;
+  }
+
+  &.small {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}

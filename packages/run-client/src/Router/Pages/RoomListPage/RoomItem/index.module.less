@@ -1,0 +1,38 @@
+.room-item {
+  display: flex;
+  padding: 16px;
+  border: 1px solid rgba(0, 22, 10, 0.2);
+  width: 100%;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .left {
+    display: flex;
+    flex-direction: column;
+
+    .name {
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    .owner {
+      font-size: 14px;
+      color: #49454f;
+      font-weight: 300;
+      margin-top: 4px;
+    }
+  }
+
+  .right {
+    display: flex;
+    align-items: center;
+
+    .status {
+      font-size: 16px;
+      color: #0498eb;
+      font-weight: 500;
+    }
+  }
+}

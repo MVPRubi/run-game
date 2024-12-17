@@ -1,0 +1,105 @@
+@import "../../common.less";
+
+.game-over-modal {
+  display: flex;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .title {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .player-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    flex: 1;
+    margin-top: 24px;
+
+    .player-item {
+      display: flex;
+      padding: 12px 12px;
+      border: 1px solid rgba(0, 22, 10, 0.2);
+      width: 100%;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 4px;
+
+      .left {
+        display: flex;
+        align-items: center;
+
+        .img {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          margin-left: 8px;
+        }
+
+        .name {
+          font-size: 16px;
+          margin-left: 12px;
+          font-weight: 400;
+          display: inline-block;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          width: 80px;
+        }
+      }
+
+      .right {
+        display: flex;
+        align-items: center;
+
+        .coin-icon {
+          width: 16px;
+          height: 16px;
+        }
+
+        .coin {
+          font-size: 16px;
+          color: #f7d410;
+          margin-left: 8px;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  .leave-btn {
+    .btn();
+
+    margin-top: 36px;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(0.5, 0.5, 0.5);
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.zoomIn {
+  animation-duration: 0.25s;
+  animation-name: zoomIn;
+}

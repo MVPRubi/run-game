@@ -1,0 +1,67 @@
+@import "../../Styles/common.less";
+
+@load-color: #fff;
+
+.root {
+  .page();
+  background-color: #000000;
+  position: absolute;
+  top: 0;
+  z-index: 10000;
+
+  .loader {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 4rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+  .loader:before,
+  .loader:after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    animation: pulsOut 1.8s ease-in-out infinite;
+    filter: drop-shadow(0 0 1rem rgba(255, 255, 255, 0.75));
+  }
+  .loader:before {
+    width: 100%;
+    padding-bottom: 100%;
+    box-shadow: inset 0 0 0 1rem @load-color;
+    animation-name: pulsIn;
+  }
+  .loader:after {
+    width: calc(100% - 2rem);
+    padding-bottom: calc(100% - 2rem);
+    box-shadow: 0 0 0 0 @load-color;
+  }
+
+  @keyframes pulsIn {
+    0% {
+      box-shadow: inset 0 0 0 1rem @load-color;
+      opacity: 1;
+    }
+    50%,
+    100% {
+      box-shadow: inset 0 0 0 0 @load-color;
+      opacity: 0;
+    }
+  }
+
+  @keyframes pulsOut {
+    0%,
+    50% {
+      box-shadow: 0 0 0 0 @load-color;
+      opacity: 0;
+    }
+    100% {
+      box-shadow: 0 0 0 1rem @load-color;
+      opacity: 1;
+    }
+  }
+}

@@ -1,0 +1,63 @@
+@import "../common.less";
+
+.root {
+  .page();
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 16px;
+
+  .title {
+    font-size: 36px;
+    color: #00160a;
+    margin-top: 16px;
+    .sub-title {
+      display: inline-block;
+      font-size: 16px;
+      color: #00160a;
+      margin-top: 8px;
+      margin-left: 8px;
+    }
+  }
+
+  .member-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 8px;
+    flex: 1;
+    margin-top: 24px;
+
+    .member-item {
+      border: 1px solid #00160a;
+      border-radius: 8px;
+      margin: 0 14px;
+      height: 60px;
+    }
+  }
+
+  .btn-group {
+    display: flex;
+    margin-bottom: 32px;
+    column-gap: 24px;
+    width: 100%;
+
+    .leave-btn {
+      .btn();
+      background-color: white;
+      color: #00160a;
+      flex: 1;
+
+      border-color: #00160a;
+    }
+
+    .state-btn {
+      .btn();
+      background-color: #00160a;
+      color: white;
+      flex: 1;
+
+      border-color: #00160a;
+    }
+  }
+}

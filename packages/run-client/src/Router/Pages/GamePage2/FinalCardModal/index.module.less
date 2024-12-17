@@ -1,0 +1,36 @@
+.final-card-modal {
+  .content {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+  }
+
+  .title {
+    font-size: 14px;
+    margin-top: 8px;
+  }
+
+  .card-list {
+    margin-top: 8px;
+    max-width: calc(100vw - 108px);
+    overflow: auto;
+    white-space: nowrap;
+    margin-top: 8px;
+    background-color: #ffffff99;
+    padding: 8px 0;
+    border-radius: 8px;
+
+    .card {
+      display: inline-flex;
+
+      &:not(:first-child) {
+        margin-left: 8px;
+      }
+    }
+  }
+
+  .btn {
+    margin-top: 20px;
+  }
+}

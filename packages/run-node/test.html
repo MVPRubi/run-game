@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script>
+    function get() {
+      fetch("http://localhost:8020/")
+        .then((response) => response.json())
+        .then((data) => console.log(data));
+    }
+
+    get();
+
+    var socket = null;
+
+    function connect() {
+      socket = new WebSocket("ws://localhost:8010");
+
+      socket.onopen = (event) => {
+        console.log("On open");
+        socket.send("Hello Server!");
+      };
+
+      // socket.onmessage = (event) => {
+      //   console.log("Message from server ", event.data.toString());
+      // };
+
+      socket.onclose = () => {
+        console.log("On close");
+      };
+      // // Connection opened
+      // socket.addEventListener("open", function (event) {
+      //   console.log("On open");
+      //   socket.send("Hello Server!");
+      // });
+
+      // Listen for messages
+      socket.addEventListener("message", function (event) {
+        console.log("Message from server ", event.data);
+      });
+    }
+
+    connect();
+
+    function send() {
+      if (socket === null) {
+        console.error("连接异常");
+      } else {
+        // console.log("prepare to send", socket);
+        const text = "123123123123123";
+        // const buffer = Buffer.from(text, "utf8");
+
+        const bytes = new Uint8Array(text.length);
+
+        for (let i = 0; i < text.length; i++) {
+          bytes[i] = text.charCodeAt(i);
+        }
+        socket.send("send server!");
+      }
+    }
+  </script>
+  <body>
+    <div>test test</div>
+    <button onclick="send()">send</button>
+  </body>
+</html>

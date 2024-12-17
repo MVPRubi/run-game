@@ -1,0 +1,164 @@
+@import "../common.less";
+
+.root {
+  .page();
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  .head-group {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .head-image {
+    width: 340px;
+    height: 340px;
+    margin-top: 12px;
+  }
+
+  .title {
+    font-size: 36px;
+    margin-top: 24px;
+    font-weight: 600;
+    position: relative;
+    // transform: rotate3d(0, 0, 1, -10deg) scale(1.1);
+
+    .underline {
+      position: absolute;
+      bottom: -8px;
+      left: 100px;
+      right: 0;
+      height: 2px;
+      background-color: rgb(128, 124, 124);
+      transition: all 0.5s ease-in-out;
+    }
+
+    img {
+      width: 300px;
+    }
+  }
+
+  .btn-group {
+    display: flex;
+    row-gap: 12px;
+    flex-direction: column;
+    margin-bottom: 32px;
+  }
+
+  .btn {
+    width: 210px;
+    padding: 14px 16px;
+  }
+
+  .user-id {
+    font-size: 12px;
+    position: absolute;
+    text-align: right;
+    right: 12px;
+    bottom: 12px;
+  }
+
+  .name-modal {
+    display: flex;
+    align-items: center;
+
+    .name-input {
+      .input();
+      width: 100px;
+    }
+
+    .name-btn {
+      height: 40px;
+      font-size: 16px;
+      margin-left: 8px;
+      width: 80px;
+    }
+  }
+
+  .horse-image {
+    position: absolute;
+    right: -200px;
+    bottom: 110px;
+    z-index: -1;
+    width: 500px;
+  }
+
+  .horse-image-mask {
+    bottom: 107px;
+    mix-blend-mode: color;
+    filter: blur(6px);
+  }
+
+  .horse-head {
+    transform-origin: 190px 140px;
+    animation: look 4s ease-in-out infinite;
+  }
+
+  .dice-btn {
+    position: absolute;
+    bottom: 330px;
+    left: 100px;
+    margin: unset;
+    width: 50px;
+    height: 50px;
+    // 骰子下落并且旋转,在地面反弹两次
+    // transform: rotateZ(0deg);
+    animation: dice 4s ease-in-out infinite;
+    will-change: bottom, transform;
+  }
+}
+
+@keyframes dice {
+  from {
+    bottom: 330px;
+  }
+  20% {
+    bottom: 200px;
+  }
+  40% {
+    bottom: 280px;
+  }
+
+  50% {
+    transform: rotateZ(179deg);
+  }
+
+  60% {
+    bottom: 200px;
+  }
+  80% {
+    bottom: 250px;
+  }
+
+  100% {
+    bottom: 200px;
+  }
+}
+
+@keyframes look {
+  from {
+    transform: rotateZ(0deg);
+  }
+  20% {
+    transform: rotateZ(-10deg) rotateY(15deg);
+  }
+  40% {
+    transform: rotateZ(-6deg) rotateY(10deg);
+  }
+
+  60% {
+    transform: rotateZ(-10deg) rotateY(15deg);
+  }
+  80% {
+    transform: rotateZ(-4deg) rotateY(10deg);
+  }
+
+  100% {
+    transform: rotateZ(-10deg);
+  }
+}

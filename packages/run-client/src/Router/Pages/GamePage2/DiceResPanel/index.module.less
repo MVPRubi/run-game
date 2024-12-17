@@ -1,0 +1,31 @@
+.dice-res-panel {
+  position: absolute;
+  right: 12px;
+  top: 60px;
+  padding: 0 8px;
+  border-radius: 12px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  box-shadow: 0 0 8px rgba(0, 22, 10, 0.2);
+  opacity: 0.9;
+  overflow: hidden;
+  transition: all 0.25s linear;
+  width: 52px;
+
+  .dice {
+    flex-shrink: 0;
+    min-width: 36px;
+    min-height: 36px;
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 22, 10, 0.2);
+  }
+}

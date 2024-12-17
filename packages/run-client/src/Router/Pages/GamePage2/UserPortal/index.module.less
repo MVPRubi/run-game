@@ -1,0 +1,133 @@
+.user-portal {
+  position: absolute;
+  top: 40px;
+  width: 86px;
+  height: 48px;
+  border-radius: 0px 30px 30px 0px;
+  border: 1px solid rgba(0, 22, 10, 0.2);
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding: 0 6px;
+  border-left-width: 0;
+  left: -35px;
+  transition: all 0.3s ease-in-out;
+  transform: scale(1);
+
+  .name {
+    font-size: 16px;
+    font-weight: 400;
+    margin-right: 8px;
+    // 最多两行，超过两行显示省略号
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+  }
+
+  .img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+  }
+
+  &.is-operate {
+    transform: scale(1.2);
+    // left: 0;
+  }
+
+  .msg-root {
+    position: absolute;
+    left: calc(100% + 8px);
+  }
+
+  .msg-box {
+    top: 0;
+    bottom: 0;
+    left: 8px;
+    margin: auto;
+    position: absolute;
+    min-width: 48px;
+    height: 48px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    padding: 0 8px;
+    white-space: nowrap;
+    transform-origin: left center;
+    transition: all 0.3s ease-in-out;
+    animation: msg-box 0.3s ease-in-out;
+    box-shadow: 0 0 8px rgba(0, 22, 10, 0.2);
+
+    &.leave {
+      animation: msg-box-leave 0.3s ease-in-out;
+      // 保持结束状态
+      animation-fill-mode: forwards;
+    }
+
+    .coin-icon {
+      width: 16px;
+      height: 16px;
+      margin-left: 2px;
+    }
+
+    .card {
+      width: 20px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 4px;
+      border-width: 1px;
+      border-style: solid;
+
+      .coin {
+        width: 10px;
+        height: 10px;
+        background-color: #ffea29;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        font-size: 8px;
+      }
+    }
+    // 左边水平居中加个小尖
+    &::before {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border: 6px solid transparent;
+      border-right-color: #fff;
+      left: -12px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+// 消息框弹出动画
+@keyframes msg-box {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+// 消息框弹出动画
+@keyframes msg-box-leave {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}

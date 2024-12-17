@@ -1,0 +1,56 @@
+.help-modal {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  font-size: 14px;
+  color: #00160a;
+
+  .l1 {
+    font-size: 16px;
+    margin-top: 8px;
+    margin-bottom: 4px;
+  }
+
+  .l2 {
+    font-size: 14px;
+    margin-top: 4px;
+
+    // 文字开始前加菱形
+    &::before {
+      content: '◆';
+      font-size: 22px;
+      line-height: 1;
+      margin-right: 6px;
+      // 基线在底部
+      vertical-align: bottom;
+    }
+  }
+
+  .head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+    margin-top: 12px;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(0.5, 0.5, 0.5);
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.zoomIn {
+  animation-duration: 0.25s;
+  animation-name: zoomIn;
+}
