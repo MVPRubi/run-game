@@ -9,7 +9,6 @@ export default defineConfig({
   plugins: [
     react(),
     visualizer({
-      open: true,
       gzipSize: true,
       brotliSize: true,
     }),

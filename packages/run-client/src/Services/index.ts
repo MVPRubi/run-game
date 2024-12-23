@@ -4,11 +4,11 @@ import axios from "axios";
 // const BASE_HOST = "192.168.199.141:8899";
 // const BASE_HOST = "123.206.117.14:8899";
 // const BASE_HOST = "api.vcyberlift.com";
-const BASE_HOST = "127.0.0.1:8899";
+const BASE_HOST = import.meta.env.VITE_API_URL;
 // const SOCKET_BASE_HOST = "192.168.199.141:8898";
 // const SOCKET_BASE_HOST = "123.206.117.14:8898";
 // const SOCKET_BASE_HOST = "vcyberlift.com:8898";
-const SOCKET_BASE_HOST = "127.0.0.1:8898";
+// const SOCKET_BASE_HOST = "127.0.0.1:8898";
 
 axios.defaults.baseURL = `http://${BASE_HOST}`;
 axios.defaults.headers.common = {
@@ -19,7 +19,7 @@ axios.defaults.headers.common = {
 export * from "./socket";
 
 export const connect = async (protocol: string): Promise<WebSocket> => {
-  return connectSocket.connect(`ws://${SOCKET_BASE_HOST}`, protocol);
+  return connectSocket.connect(`ws://${BASE_HOST}/ws`, protocol);
 };
 
 export const close = async () => {

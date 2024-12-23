@@ -645,10 +645,6 @@
   resolved "https://registry.npmmirror.com/@tweenjs/tween.js/-/tween.js-21.0.0.tgz#73f993c2d1de37b78b4c1246163e20bc6ae3b75e"
   integrity sha512-qVfOiFh0U8ZSkLgA6tf7kj2MciqRbSCWaJZRwftVO7UbtVDNsZAXpWXqvCDtIefvjC83UJB+vHTDOGm5ibXjEA==
 
-"@types/@tweenjs/tween.js":
-  version "21.0.0"
-  resolved "https://codeload.github.com/tweenjs/tween.js/tar.gz/e01bbdbebe2d05509b73bbbe7dc7438228124a9e"
-
 "@types/babel__core@^7.20.3":
   version "7.20.4"
   resolved "https://registry.npmmirror.com/@types/babel__core/-/babel__core-7.20.4.tgz#26a87347e6c6f753b3668398e34496d6d9ac6ac0"
